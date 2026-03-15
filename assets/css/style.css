@@ -202,7 +202,7 @@
             margin: 0 32px 24px 32px;
             padding: 48px;
             height: 340px;
-            background: url('./images/header-banner-v4.png') center/cover no-repeat;
+            background: url('../../images/header-banner-v4.png') center/cover no-repeat;
             background-color: transparent;
             color: rgba(0, 0, 0, 0.85);
             position: relative;
