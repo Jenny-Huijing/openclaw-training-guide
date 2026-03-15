@@ -1,0 +1,217 @@
+/* ===================================
+   OpenClaw Training Guide - Responsive Styles
+   Mobile-first responsive design
+   =================================== */
+
+/* Mobile: < 768px */
+@media (max-width: 768px) {
+    :root {
+        --sidebar-width: 0;
+    }
+    
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .content-wrapper {
+        padding: 0 16px 16px;
+    }
+    
+    .page-header {
+        margin: 0 16px 16px;
+        padding: 32px 20px;
+        height: auto;
+        min-height: 280px;
+    }
+    
+    .page-title {
+        font-size: 18px;
+    }
+    
+    .page-subtitle-main {
+        font-size: 22px;
+        white-space: normal;
+    }
+    
+    .page-header-content {
+        max-width: 100%;
+        min-width: auto;
+    }
+    
+    .page-meta {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .page-meta span {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    .chapter {
+        margin-bottom: 16px;
+        padding: 20px;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+    
+    .chapter-title {
+        font-size: 20px;
+    }
+    
+    .section-title {
+        font-size: 16px;
+    }
+    
+    .content-img {
+        margin: 12px 0;
+    }
+    
+    .img-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .compare-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .features {
+        grid-template-columns: 1fr;
+    }
+    
+    .flow-diagram {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .flow-arrow {
+        transform: rotate(90deg);
+    }
+    
+    footer {
+        margin: 16px;
+        padding: 20px;
+    }
+    
+    /* Mobile menu toggle button */
+    .mobile-menu-toggle {
+        display: block;
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        z-index: 200;
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+}
+
+/* Tablet: 768px - 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    :root {
+        --sidebar-width: 240px;
+    }
+    
+    .page-header-content {
+        max-width: 60%;
+        min-width: 300px;
+    }
+    
+    .page-subtitle-main {
+        font-size: 26px;
+    }
+    
+    .chapter {
+        padding: 20px 24px;
+    }
+}
+
+/* Desktop: > 1024px */
+@media (min-width: 1025px) {
+    .mobile-menu-toggle {
+        display: none;
+    }
+}
+
+/* Large screens: > 1400px */
+@media (min-width: 1400px) {
+    :root {
+        --max-width: 1400px;
+    }
+    
+    .page-header {
+        height: 380px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .sidebar {
+        display: none;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .page-header {
+        height: auto;
+        background: none;
+        color: black;
+    }
+    
+    .page-title,
+    .page-subtitle-main,
+    .page-desc {
+        color: black;
+    }
+    
+    .content-img {
+        max-width: 100%;
+    }
+    
+    .chapter {
+        break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+    /* Dark mode styles can be added here */
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    :root {
+        --border: #000;
+        --text-primary: #000;
+        --primary: #0066cc;
+    }
+}
