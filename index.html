@@ -858,7 +858,8 @@
                         本地安装
                     </h3>
                     <div class="section-content">
-                        <h4>方式一：使用 npm（推荐）</h4>
+                        <h4>macOS 安装（推荐 Homebrew）</h4>
+                        <p>macOS 用户推荐使用 Homebrew 安装，简单快捷。</p>
                         <div class="code-block">
                             <div class="code-header">
                                 <div class="code-dots">
@@ -870,22 +871,53 @@
                                 <button class="code-copy" onclick="copyCode(this)">复制</button>
                             </div>
                             <div class="code-content">
-                                <code># 全局安装 OpenClaw CLI
+                                <code># 1. 安装 Homebrew（如未安装）
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# 2. 安装 Node.js 22
+brew install node@22
+
+# 3. 添加 Node 到 PATH
+echo 'export PATH="/opt/homebrew/opt/node@22/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+
+# 4. 全局安装 OpenClaw
 npm install -g @openclaw/cli
 
-# 验证安装
+# 5. 验证安装
 openclaw --version
 
-# 初始化工作区
+# 6. 初始化工作区
 openclaw init my-agent
-cd my-agent
-
-# 启动 Gateway
-openclaw start</code>
+cd my-agent</code>
                             </div>
                         </div>
                         
-                        <h4>方式二：使用 yarn</h4>
+                        <h4>Windows 安装（WSL2 方式）</h4>
+                        <p>Windows 用户强烈推荐使用 WSL2（Windows Subsystem for Linux），提供与 Linux/macOS 一致的体验。</p>
+                        
+                        <p><strong>步骤一：安装 WSL2</strong></p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <div class="code-dots">
+                                    <span class="code-dot red"></span>
+                                    <span class="code-dot yellow"></span>
+                                    <span class="code-dot green"></span>
+                                </div>
+                                <span class="code-lang">powershell</span>
+                                <button class="code-copy" onclick="copyCode(this)">复制</button>
+                            </div>
+                            <div class="code-content">
+                                <code># 以管理员身份打开 PowerShell，运行：
+wsl --install
+
+# 重启电脑后，设置 Ubuntu 用户名密码
+# 然后更新系统
+sudo apt update && sudo apt upgrade -y</code>
+                            </div>
+                        </div>
+                        
+                        <p><strong>步骤二：在 WSL2 中安装 OpenClaw</strong></p>
                         <div class="code-block">
                             <div class="code-header">
                                 <div class="code-dots">
@@ -897,14 +929,56 @@ openclaw start</code>
                                 <button class="code-copy" onclick="copyCode(this)">复制</button>
                             </div>
                             <div class="code-content">
-                                <code>yarn global add @openclaw/cli
+                                <code># 1. 安装 Node.js 22
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# 2. 验证 Node 安装
+node --version  # v22.x.x
+npm --version   # 10.x.x
+
+# 3. 全局安装 OpenClaw
+npm install -g @openclaw/cli
+
+# 4. 验证安装
+openclaw --version
+
+# 5. 初始化工作区
+openclaw init my-agent
+cd my-agent</code>
+                            </div>
+                        </div>
+                        
+                        <h4>Linux 安装（Ubuntu/Debian）</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <div class="code-dots">
+                                    <span class="code-dot red"></span>
+                                    <span class="code-dot yellow"></span>
+                                    <span class="code-dot green"></span>
+                                </div>
+                                <span class="code-lang">bash</span>
+                                <button class="code-copy" onclick="copyCode(this)">复制</button>
+                            </div>
+                            <div class="code-content">
+                                <code># 1. 安装 Node.js 22
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# 2. 全局安装 OpenClaw
+npm install -g @openclaw/cli
+
+# 3. 初始化工作区
 openclaw init my-agent
 cd my-agent
+
+# 4. 启动 Gateway
 openclaw start</code>
                             </div>
                         </div>
                         
                         <h4>目录结构说明</h4>
+                        <p>初始化完成后，工作区目录结构如下：</p>
                         <div class="code-block">
                             <div class="code-header">
                                 <div class="code-dots">
@@ -922,8 +996,18 @@ openclaw start</code>
 │   ├── sessions.json    # 会话存储
 │   └── logs/            # 运行日志
 ├── workspace/           # Agent 工作区
+│   ├── SOUL.md          # 智能体人格定义
+│   ├── TOOLS.md         # 工具配置
+│   └── skills/          # 技能目录
 ├── config.yaml          # 主配置文件
-└── package.json</code>
+└── package.json         # 项目依赖</code>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-content">
+                                <strong>Windows 用户注意：</strong>WSL2 是运行 OpenClaw 的最佳方式。相比原生 Windows，WSL2 提供更好的文件系统性能和兼容性，同时保持与 macOS/Linux 一致的开发体验。
                             </div>
                         </div>
                     </div>
