@@ -6,6 +6,30 @@
 (function() {
     'use strict';
 
+    // Copy code function
+    window.copyCode = function(button) {
+        const codeBlock = button.closest('.code-block');
+        const code = codeBlock.querySelector('code').innerText;
+        
+        navigator.clipboard.writeText(code).then(() => {
+            const originalText = button.textContent;
+            button.textContent = '已复制!';
+            button.style.background = '#27c93f';
+            button.style.borderColor = '#27c93f';
+            button.style.color = '#fff';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '';
+                button.style.borderColor = '';
+                button.style.color = '';
+            }, 2000);
+        }).catch(err => {
+            console.error('复制失败:', err);
+            button.textContent = '复制失败';
+        });
+    };
+
     // DOM Elements
     const sidebar = document.querySelector('.sidebar');
     const navLinks = document.querySelectorAll('.nav-link');

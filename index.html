@@ -844,7 +844,17 @@
                     <div class="section-content">
                         <h4>方式一：使用 npm（推荐）</h4>
                         <div class="code-block">
-                            <code># 全局安装 OpenClaw CLI
+                            <div class="code-header">
+                                <div class="code-dots">
+                                    <span class="code-dot red"></span>
+                                    <span class="code-dot yellow"></span>
+                                    <span class="code-dot green"></span>
+                                </div>
+                                <span class="code-lang">bash</span>
+                                <button class="code-copy" onclick="copyCode(this)">复制</button>
+                            </div>
+                            <div class="code-content">
+                                <code># 全局安装 OpenClaw CLI
 npm install -g @openclaw/cli
 
 # 验证安装
@@ -856,19 +866,41 @@ cd my-agent
 
 # 启动 Gateway
 openclaw start</code>
+                            </div>
                         </div>
                         
                         <h4>方式二：使用 yarn</h4>
                         <div class="code-block">
-                            <code>yarn global add @openclaw/cli
+                            <div class="code-header">
+                                <div class="code-dots">
+                                    <span class="code-dot red"></span>
+                                    <span class="code-dot yellow"></span>
+                                    <span class="code-dot green"></span>
+                                </div>
+                                <span class="code-lang">bash</span>
+                                <button class="code-copy" onclick="copyCode(this)">复制</button>
+                            </div>
+                            <div class="code-content">
+                                <code>yarn global add @openclaw/cli
 openclaw init my-agent
 cd my-agent
 openclaw start</code>
+                            </div>
                         </div>
                         
                         <h4>目录结构说明</h4>
                         <div class="code-block">
-                            <code>my-agent/
+                            <div class="code-header">
+                                <div class="code-dots">
+                                    <span class="code-dot red"></span>
+                                    <span class="code-dot yellow"></span>
+                                    <span class="code-dot green"></span>
+                                </div>
+                                <span class="code-lang">bash</span>
+                                <button class="code-copy" onclick="copyCode(this)">复制</button>
+                            </div>
+                            <div class="code-content">
+                                <code>my-agent/
 ├── .openclaw/           # 运行时数据
 │   ├── gateway.pid      # 进程ID
 │   ├── sessions.json    # 会话存储
@@ -876,6 +908,7 @@ openclaw start</code>
 ├── workspace/           # Agent 工作区
 ├── config.yaml          # 主配置文件
 └── package.json</code>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -890,7 +923,17 @@ openclaw start</code>
                         
                         <h4>快速启动</h4>
                         <div class="code-block">
-                            <code># 创建数据目录
+                            <div class="code-header">
+                                <div class="code-dots">
+                                    <span class="code-dot red"></span>
+                                    <span class="code-dot yellow"></span>
+                                    <span class="code-dot green"></span>
+                                </div>
+                                <span class="code-lang">bash</span>
+                                <button class="code-copy" onclick="copyCode(this)">复制</button>
+                            </div>
+                            <div class="code-content">
+                                <code># 创建数据目录
 mkdir -p ~/openclaw-data/{workspace,memory,logs}
 
 # 运行容器
@@ -901,11 +944,22 @@ docker run -d \
   -e ANTHROPIC_API_KEY=sk-ant-xxx \
   -e TELEGRAM_BOT_TOKEN=your-token \
   openclaw/openclaw:latest</code>
+                            </div>
                         </div>
                         
                         <h4>Docker Compose 配置</h4>
                         <div class="code-block">
-                            <code>version: "3.8"
+                            <div class="code-header">
+                                <div class="code-dots">
+                                    <span class="code-dot red"></span>
+                                    <span class="code-dot yellow"></span>
+                                    <span class="code-dot green"></span>
+                                </div>
+                                <span class="code-lang">bash</span>
+                                <button class="code-copy" onclick="copyCode(this)">复制</button>
+                            </div>
+                            <div class="code-content">
+                                <code>version: "3.8"
 
 services:
   openclaw:
@@ -925,6 +979,7 @@ services:
       resources:
         limits:
           memory: 2G</code>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -939,7 +994,17 @@ services:
                         
                         <h4>阿里云 ECS 一键部署 <a href="https://www.aliyun.com/product/swas" target="_blank" rel="noopener">> 前往部署</a></h4>
                         <div class="code-block">
-                            <code># 使用阿里云容器镜像服务加速
+                            <div class="code-header">
+                                <div class="code-dots">
+                                    <span class="code-dot red"></span>
+                                    <span class="code-dot yellow"></span>
+                                    <span class="code-dot green"></span>
+                                </div>
+                                <span class="code-lang">bash</span>
+                                <button class="code-copy" onclick="copyCode(this)">复制</button>
+                            </div>
+                            <div class="code-content">
+                                <code># 使用阿里云容器镜像服务加速
 docker run -d \
   --name openclaw \
   -p 127.0.0.1:18789:18789 \
@@ -948,6 +1013,7 @@ docker run -d \
   -e MODEL_DEFAULT_PROVIDER=dashscope \
   -e MODEL_DEFAULT_MODEL=qwen-max \
   registry.cn-hangzhou.aliyuncs.com/openclaw/openclaw:2026.3.8</code>
+                            </div>
                         </div>
                         
                         <h4>腾讯云 Lighthouse 应用模板 <a href="https://cloud.tencent.com/act/pro/lighthouse-moltbot" target="_blank" rel="noopener">> 前往部署</a></h4>
@@ -976,7 +1042,17 @@ docker run -d \
                         
                         <h4>国内网络优化配置</h4>
                         <div class="code-block">
-                            <code># config.yaml 国内优化版
+                            <div class="code-header">
+                                <div class="code-dots">
+                                    <span class="code-dot red"></span>
+                                    <span class="code-dot yellow"></span>
+                                    <span class="code-dot green"></span>
+                                </div>
+                                <span class="code-lang">bash</span>
+                                <button class="code-copy" onclick="copyCode(this)">复制</button>
+                            </div>
+                            <div class="code-content">
+                                <code># config.yaml 国内优化版
 models:
   default: "qwen-max"
   providers:
@@ -989,6 +1065,7 @@ channels:
     enabled: false
   feishu:
     enabled: true</code>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -1002,7 +1079,17 @@ channels:
                         <h4>首次配置向导</h4>
                         <p>执行初始化命令，向导会引导完成配置：</p>
                         <div class="code-block">
-                            <code>$ openclaw init my-agent
+                            <div class="code-header">
+                                <div class="code-dots">
+                                    <span class="code-dot red"></span>
+                                    <span class="code-dot yellow"></span>
+                                    <span class="code-dot green"></span>
+                                </div>
+                                <span class="code-lang">bash</span>
+                                <button class="code-copy" onclick="copyCode(this)">复制</button>
+                            </div>
+                            <div class="code-content">
+                                <code>$ openclaw init my-agent
 🦞 OpenClaw v2026.3.8 Initializer
 
 ? 选择部署模式: 
@@ -1020,17 +1107,29 @@ channels:
 
 ✓ 配置文件已生成
 🚀 Gateway 启动成功！</code>
+                            </div>
                         </div>
                         
                         <h4>多模型配置（分级降级链）</h4>
                         <div class="code-block">
-                            <code>models:
+                            <div class="code-header">
+                                <div class="code-dots">
+                                    <span class="code-dot red"></span>
+                                    <span class="code-dot yellow"></span>
+                                    <span class="code-dot green"></span>
+                                </div>
+                                <span class="code-lang">bash</span>
+                                <button class="code-copy" onclick="copyCode(this)">复制</button>
+                            </div>
+                            <div class="code-content">
+                                <code>models:
   default: "claude-3-opus"
   fallback_chain:
     - "claude-3-opus"      # 主力机
     - "claude-3-sonnet"    # 备选1
     - "deepseek-chat"      # 备选2
     - "qwen-turbo"         # 备选3</code>
+                            </div>
                         </div>
                         
                         <div class="tip-box">
@@ -1050,7 +1149,17 @@ channels:
                     </h3>
                     <div class="section-content">
                         <div class="code-block">
-                            <code># 前台运行（开发调试）
+                            <div class="code-header">
+                                <div class="code-dots">
+                                    <span class="code-dot red"></span>
+                                    <span class="code-dot yellow"></span>
+                                    <span class="code-dot green"></span>
+                                </div>
+                                <span class="code-lang">bash</span>
+                                <button class="code-copy" onclick="copyCode(this)">复制</button>
+                            </div>
+                            <div class="code-content">
+                                <code># 前台运行（开发调试）
 openclaw start
 
 # 后台运行
@@ -1068,6 +1177,7 @@ openclaw status
 # 停止/重启
 openclaw stop
 openclaw restart</code>
+                            </div>
                         </div>
                     </div>
                 </section>
