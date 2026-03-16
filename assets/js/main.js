@@ -116,29 +116,6 @@
         }
     }
     
-    // Code block copy functionality
-    function initCodeCopy() {
-        document.querySelectorAll('.code-block').forEach(block => {
-            const button = document.createElement('button');
-            button.className = 'code-copy-btn';
-            button.textContent = '复制';
-            button.setAttribute('aria-label', '复制代码');
-            
-            button.addEventListener('click', () => {
-                const code = block.querySelector('code').textContent;
-                navigator.clipboard.writeText(code).then(() => {
-                    button.textContent = '已复制!';
-                    setTimeout(() => {
-                        button.textContent = '复制';
-                    }, 2000);
-                });
-            });
-            
-            block.style.position = 'relative';
-            block.appendChild(button);
-        });
-    }
-    
     // Scroll progress indicator
     function initScrollProgress() {
         const progressBar = document.createElement('div');
@@ -178,7 +155,6 @@
         createMobileMenuToggle();
         initSmoothScroll();
         initLazyLoading();
-        initCodeCopy();
         initScrollProgress();
         initKeyboardNav();
         
