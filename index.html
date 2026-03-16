@@ -407,30 +407,88 @@
                         龙虾的"记忆术"
                     </h3>
                     <div class="section-content">
+                        <p>OpenClaw 的记忆系统采用<strong>分层存储设计</strong>，就像人类的长短期记忆结合，让 AI 既能记住你的长期偏好，又能理解当前对话的上下文。</p>
+                        
                         <div class="features">
                             <div class="feature">
                                 <div class="feature-icon">🎭</div>
                                 <div class="feature-title">SOUL.md</div>
-                                <div class="feature-desc">定义 AI 的人格、性格</div>
+                                <div class="feature-desc">AI 的人格定义，决定"它是谁"</div>
                             </div>
                             
                             <div class="feature">
                                 <div class="feature-icon">👤</div>
                                 <div class="feature-title">USER.md</div>
-                                <div class="feature-desc">记录用户偏好、习惯</div>
+                                <div class="feature-desc">用户画像档案，记住"你是谁"</div>
                             </div>
                             
                             <div class="feature">
                                 <div class="feature-icon">📚</div>
                                 <div class="feature-title">MEMORY.md</div>
-                                <div class="feature-desc">项目进展、重要决策</div>
+                                <div class="feature-desc">项目知识库，积累"我们做过什么"</div>
                             </div>
                             
                             <div class="feature">
                                 <div class="feature-icon">💬</div>
                                 <div class="feature-title">Session</div>
-                                <div class="feature-desc">当前对话上下文</div>
+                                <div class="feature-desc">会话上下文，理解"现在聊到哪"</div>
                             </div>
+                        </div>
+                        
+                        <h4 style="font-size: 1rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: var(--text-primary);">SOUL.md - 给龙虾注入灵魂</h4>
+                        
+                        <p>这是 AI 的"出生证明"，定义它的身份、性格、说话风格和价值观。就像给小猫起名字、训练它用猫砂盆，SOUL.md 决定了你的龙虾是什么性格。</p>
+                        
+                        <div class="code-block" style="margin: 1rem 0;">
+                            <div class="code-header">
+                                <span class="code-lang">markdown</span>
+                            </div>
+                            <div class="code-content">
+                                <code># SOUL.md 示例
+
+## 你是谁
+我是小珑宝 🐾，一个聪明活泼的 AI 数字伙伴
+
+## 性格特点
+- 聪明：善于思考，提供有价值的建议
+- 活泼：语气轻松自然，不呆板
+- 可爱：有点俏皮，恰到好处的温暖
+
+## 说话风格
+- 使用 emoji 表达情绪
+- 避免"亲爱的用户"这类官方套话
+- 适当使用网络流行语</code>
+                            </div>
+                        </div>
+                        
+                        <h4 style="font-size: 1rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: var(--text-primary);">USER.md - 越用越懂你</h4>
+                        
+                        <p>记录用户的偏好、习惯、重要信息。比如你是夜猫子还是早起鸟，喜欢简洁回答还是详细解释，有什么忌口或禁忌。</p>
+                        
+                        <div class="card" style="background: #eff6ff; border-left: 4px solid #3b82f6; margin: 1rem 0;">
+                            <p style="margin: 0;"><strong>典型内容：</strong>用户偏好、项目背景、常用工具、沟通风格、重要日期、敏感话题...</p>
+                        </div>
+                        
+                        <h4 style="font-size: 1rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: var(--text-primary);">MEMORY.md - 积累的智慧</h4>
+                        
+                        <p>这是项目的"黑匣子"，记录关键决策、踩过的坑、学到的经验。即使重启对话，这些知识也不会丢失。</p>
+                        
+                        <div class="card" style="background: #f0fdf4; border-left: 4px solid #22c55e; margin: 1rem 0;">
+                            <p style="margin: 0;"><strong>记录什么：</strong>架构决策、API 变更、bug 修复方案、业务规则、团队约定...</p>
+                        </div>
+                        
+                        <h4 style="font-size: 1rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: var(--text-primary);">Session - 活在当下</h4>
+                        
+                        <p>当前对话的实时上下文，让 AI 能引用你刚才说的话、记住你上一步的操作。这是大模型原生的短期记忆。</p>
+                        
+                        <div class="card card-info" style="margin-top: 1.5rem;">
+                            <div class="card-title">💡 记忆的最佳实践</div>
+                            <ul style="margin: 0.5rem 0 0 1.5rem; padding: 0;">
+                                <li>SOUL.md 在初始化时定义，之后很少改动</li>
+                                <li>USER.md 随着了解加深持续更新</li>
+                                <li>MEMORY.md 要主动记录重要信息</li>
+                                <li>关键决策和教训要立即写入 MEMORY.md</li>
+                            </ul>
                         </div>
                     </div>
                 </section>
@@ -441,9 +499,93 @@
                         黑科技：上下文压缩
                     </h3>
                     <div class="section-content">
-                        <div class="card card-success">
+                        <p>大模型有个致命弱点：<strong>遗忘</strong>。它们有上下文窗口限制（通常 128k tokens），一旦对话过长，就会"失忆"。OpenClaw 通过两大技术解决这个问题。</p>
+                        
+                        <h4 style="font-size: 1rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: var(--text-primary);">问题：上下文窗口限制</h4>
+                        
+                        <p>想象一下，你和 AI 聊了 3 个小时，它突然忘了你刚才说的需求。这不是 bug，是物理限制：</p>
+                        
+                        <ul class="list-check">
+                            <li><strong>GPT-4：</strong>128k tokens ≈ 300 页文档</li>
+                            <li><strong>Claude 3：</strong>200k tokens ≈ 500 页文档</li>
+                            <li><strong>实际可用：</strong>还要扣除系统提示、工具描述等</li>
+                        </ul>
+                        
+                        <h4 style="font-size: 1rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: var(--text-primary);">技术一：摘录（Summarization）</h4>
+                        
+                        <p>当对话即将溢出窗口时，OpenClaw 会智能提取关键信息，生成摘要。就像做读书笔记，保留精华，丢弃细节。</p>
+                        
+                        <div class="card" style="background: #fefce8; border: 1px solid #facc15; margin: 1rem 0;">
+                            <div style="font-family: monospace; font-size: 0.875rem; line-height: 1.6; color: #713f12;">
+                                <div style="font-weight: bold; margin-bottom: 0.5rem;">摘录前（10000 tokens）：</div>
+                                <div>用户：帮我分析 Q1 财报...</div>
+                                <div>AI：好的，这是 Q1 数据...（5000 tokens 详细分析）</div>
+                                <div>用户：那 Q2 呢...</div>
+                                <div>AI：Q2 的情况是...（4000 tokens 详细分析）</div>
+                                <div style="font-weight: bold; margin: 1rem 0 0.5rem;">摘录后（500 tokens）：</div>
+                                <div>[摘要] 用户要求分析 Q1/Q2 财报，已提供详细数据。</div>
+                                <div>当前话题：讨论 Q3 预测</div>
+                            </div>
+                        </div>
+                        
+                        <h4 style="font-size: 1rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: var(--text-primary);">技术二：套娃式压缩（Hierarchical Memory）</h4>
+                        
+                        <p>更高级的技术：将记忆分层，像俄罗斯套娃一样。</p>
+                        
+                        <div class="steps" style="margin: 1rem 0;">
+                            <div class="step">
+                                <span class="step-num">1</span>
+                                <div class="step-content">
+                                    <div class="step-title">原始对话</div>
+                                    <div class="step-desc">完整保留最近 N 轮对话（如 10 轮）</div>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <span class="step-num">2</span>
+                                <div class="step-content">
+                                    <div class="step-title">近期摘要</div>
+                                    <div class="step-desc">之前的对话压缩成段落摘要</div>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <span class="step-num">3</span>
+                                <div class="step-content">
+                                    <div class="step-title">主题索引</div>
+                                    <div class="step-desc">更早的对话只保留话题标签</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card card-success" style="margin-top: 1.5rem;">
                             <div class="card-title">🧠 技术干货</div>
-                            <p>大模型有窗口限制（128k tokens），但 OpenClaw 通过<strong>"摘录"和"套娃式压缩"</strong>技术，可以实现 24/7 持久记忆。</p>
+                            <p>大模型有窗口限制（128k tokens），但 OpenClaw 通过<strong>"摘录"和"套娃式压缩"</strong>技术，可以实现 24/7 持久记忆。即使对话持续数周，AI 仍能记住你的核心需求和项目背景。</p>
+                        </div>
+                        
+                        <h4 style="font-size: 1rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: var(--text-primary);">实际效果</h4>
+                        
+                        <div class="table-wrap" style="margin: 1rem 0;">
+                            <table style="font-size: 0.875rem;">
+                                <tr>
+                                    <th>场景</th>
+                                    <th>普通 AI</th>
+                                    <th>OpenClaw</th>
+                                </tr>
+                                <tr>
+                                    <td>3天后继续项目</td>
+                                    <td>❌ "什么项目？"</td>
+                                    <td>✅ "上次我们做到登录模块..."</td>
+                                </tr>
+                                <tr>
+                                    <td>100轮对话后</td>
+                                    <td>❌ 早期需求丢失</td>
+                                    <td>✅ 核心需求在 MEMORY.md 中</td>
+                                </tr>
+                                <tr>
+                                    <td>跨会话引用</td>
+                                    <td>❌ 每次从零开始</td>
+                                    <td>✅ 自动加载相关记忆</td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </section>
