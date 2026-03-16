@@ -651,6 +651,8 @@
             font-size: 14px;
             color: #389e0d;
             line-height: 1.6;
+            white-space: pre;
+            display: block;
         }
         
         /* 表格 */
