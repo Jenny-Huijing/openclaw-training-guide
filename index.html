@@ -473,7 +473,7 @@
                     <li class="nav-item">
                         <a href="#chapter2" class="nav-link nav-chapter">第二章：解剖"小龙虾"</a>
                     <li class="nav-item"><a href="#ch2-1" class="nav-link subsection">2.1 AI Agent 发展史</a></li>
-                    <li class="nav-item"><a href="#ch2-1" class="nav-link subsection">2.2 三层骨架架构</a></li>
+                    <li class="nav-item"><a href="#ch2-1" class="nav-link subsection">2.2 四层架构设计</a></li>
                     <li class="nav-item"><a href="#ch2-2" class="nav-link subsection active">2.3 龙虾的"记忆术"</a></li>
                     <li class="nav-item"><a href="#ch2-3" class="nav-link subsection">2.4 黑科技：上下文压缩</a></li>
                 </ul>
@@ -751,34 +751,48 @@
                     </div>
                 </section>
                 
-                <section class="section" id="ch2-4">
+                <section class="section" id="ch2-2">
                     <h3 class="section-title">
-                        <span class="section-number">2.4</span>
-                        三层骨架架构
+                        <span class="section-number">2.2</span>
+                        四层架构设计
                     </h3>
                     <div class="section-content">
+                        <p>OpenClaw 采用分层架构设计，从用户交互到模型调用，每一层职责清晰，确保系统的灵活性和可扩展性。</p>
+                        
+                        <img src="images/system-architecture.png" alt="OpenClaw 四层架构图" class="content-img" loading="lazy" style="margin: 1.5rem 0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        
+                        <p style="font-size: 0.875rem; color: var(--text-muted); text-align: center; margin-top: -0.5rem;">数据流：用户消息 → Channels → Gateway → Agent → Provider → 返回响应</p>
+                        
                         <div class="steps">
                             <div class="step">
                                 <span class="step-num">1</span>
                                 <div class="step-content">
-                                    <div class="step-title">Gateway（中枢大脑）</div>
-                                    <div class="step-desc">中央控制平面，负责路由调度、会话管理</div>
+                                    <div class="step-title">Channels（渠道层）</div>
+                                    <div class="step-desc">连接 20+ 消息渠道（飞书、WhatsApp、Telegram等），让 AI 住在你的社交软件里</div>
                                 </div>
                             </div>
                             
                             <div class="step">
                                 <span class="step-num">2</span>
                                 <div class="step-content">
-                                    <div class="step-title">Node（四肢执行）</div>
-                                    <div class="step-desc">设备执行端，负责录屏、拍照、运行命令</div>
+                                    <div class="step-title">Gateway（网关层）</div>
+                                    <div class="step-desc">消息路由、认证授权、会话管理，中央控制平面</div>
                                 </div>
                             </div>
                             
                             <div class="step">
                                 <span class="step-num">3</span>
                                 <div class="step-content">
-                                    <div class="step-title">Channel（传声筒）</div>
-                                    <div class="step-desc">连接 20+ 消息渠道，让 AI 住在你的社交软件里</div>
+                                    <div class="step-title">Agent（智能体层）</div>
+                                    <div class="step-desc">消息流入、身份、灵魂、工具、记忆、技能、路由与处理、思考与决策</div>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <span class="step-num">4</span>
+                                <div class="step-content">
+                                    <div class="step-title">Provider（模型层）</div>
+                                    <div class="step-desc">对接 Claude、OpenAI 等大模型，提供底层 AI 能力</div>
                                 </div>
                             </div>
                         </div>
@@ -787,7 +801,7 @@
                 
                 <section class="section" id="ch2-4">
                     <h3 class="section-title">
-                        <span class="section-number">2.4</span>
+                        <span class="section-number">2.3</span>
                         龙虾的"记忆术"
                     </h3>
                     <div class="section-content">
@@ -821,7 +835,7 @@
                 
                 <section class="section" id="ch2-4">
                     <h3 class="section-title">
-                        <span class="section-number">2.4</span>
+                        <span class="section-number">2.3</span>
                         黑科技：上下文压缩
                     </h3>
                     <div class="section-content">
